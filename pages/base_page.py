@@ -1,6 +1,5 @@
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from .locators import BasePageLocators
 
 
@@ -11,3 +10,4 @@ class BasePage:
 
     def open(self):
         self.browser.get(self.url)
+

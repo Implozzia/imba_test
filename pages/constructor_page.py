@@ -38,3 +38,7 @@ class ConstructorPage(BasePage):
         combo_text = self.browser.find_element(*ConstructorPageLocators.PROMO).text
         assert combo_text == 'combosale1', 'Order without promocode'
 
+    def go_to_basket_page_from_constructor(self):
+        order_btn = self.browser.find_element(*BasketPageLocators.ORDER_BTN)
+        order_btn.click()
+

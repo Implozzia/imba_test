@@ -22,3 +22,11 @@ class ConstructorPageLocators:
 
 class BasketPageLocators:
     ORDER_BTN = (By.CSS_SELECTOR, '.cart-block__order-button')
+
+
+class OrderPageLocators:
+    NUMBER = (By.CSS_SELECTOR, '#client_phone')
+    NAME = (By.CSS_SELECTOR, '#client_name')
+    CITY = (By.CSS_SELECTOR, '#shipping_address_full_locality_name')
+    ADDRESS = (By.CSS_SELECTOR, '#shipping_address_address')
+    ORDER_BTN = (By.CSS_SELECTOR, '#create_order')
