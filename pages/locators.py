@@ -17,3 +17,8 @@ class ConstructorPageLocators:
     TASTE_BELL_FLOWER = (By.CSS_SELECTOR, '.constructor__taste-item:nth-child(4)')
     SHAKER_FLASH = (By.CSS_SELECTOR, '.constructor__shaker-item:nth-child(3)')
     BTN_ADD_TO_CART = (By.CSS_SELECTOR, '.constructor__button--tocart')
+    PROMO = (By.CSS_SELECTOR, '.cart-block__promo-text')
+
+
+class BasketPageLocators:
+    ORDER_BTN = (By.CSS_SELECTOR, '.cart-block__order-button')

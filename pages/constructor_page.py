@@ -1,5 +1,6 @@
 from .locators import BasePageLocators
 from .locators import ConstructorPageLocators
+from .locators import BasketPageLocators
 from .base_page import BasePage
 
 
@@ -32,3 +33,8 @@ class ConstructorPage(BasePage):
 
         add_to_cart_btn = self.browser.find_element(*ConstructorPageLocators.BTN_ADD_TO_CART)
         add_to_cart_btn.click()
+
+    def should_be_combosale(self):
+        combo_text = self.browser.find_element(*ConstructorPageLocators.PROMO).text
+        assert combo_text == 'combosale1', 'Order without promocode'
+
