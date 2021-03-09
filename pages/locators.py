@@ -30,3 +30,8 @@ class OrderPageLocators:
     CITY = (By.CSS_SELECTOR, '#shipping_address_full_locality_name')
     ADDRESS = (By.CSS_SELECTOR, '#shipping_address_address')
     ORDER_BTN = (By.CSS_SELECTOR, '#create_order')
+
+
+class CatalogPageLocators:
+    MERCH_TAB = (By.XPATH, '/html/body/div[3]/div/ul/div/div/div[3]/div/li/a')
+    SAMURAI_MOUSEPAD = (By.CSS_SELECTOR, '.product-item:nth-child(7)')
