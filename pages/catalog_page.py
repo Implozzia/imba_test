@@ -44,15 +44,14 @@ class CatalogPage(BasePage):
         name_input.send_keys('test test')
 
         city_input = self.browser.find_element(*OrderPageLocators.CITY)
+        city_input.clear()
         city_input.send_keys('г Нижний Новгород, Нижегородская обл.')
+        name_input.click()
 
         address_input = self.browser.find_element(*OrderPageLocators.ADDRESS)
         address_input.send_keys('test test')
 
     def should_be_available_all_delivery(self):
-        delivery_info = self.browser.find_element(*OrderPageLocators.DELIVERY_INFO)
-        ActionChains(self.browser).move_to_element(delivery_info).perform()
-        time.sleep(5)
         boxberry_offline = self.browser.find_element(*OrderPageLocators.BOXBERRY_OFFLINE).text
         assert boxberry_offline == 'Курьером Boxberry (Только онлайн оплата)', 'Boxberry courier is not available'
         boxberry_online = self.browser.find_element(*OrderPageLocators.BOXBERRY_ONLINE).text

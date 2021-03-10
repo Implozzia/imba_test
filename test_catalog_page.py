@@ -15,6 +15,7 @@ def test_order_from_catalog_page(browser):
     page.should_be_promocode_text()
     page.go_to_order_page()
     page.fill_order_page_data()
+    time.sleep(8)
     page.should_be_available_all_delivery()
     page.accept_order()
     time.sleep(10)
