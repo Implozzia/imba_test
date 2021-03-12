@@ -1,4 +1,5 @@
 from .pages.catalog_page import CatalogPage
+from .pages.order_page import OrderPage
 import time
 import pytest
 
@@ -18,4 +19,5 @@ def test_order_from_catalog_page(browser):
     time.sleep(8)
     page.should_be_available_all_delivery()
     page.accept_order()
-    time.sleep(10)
+    time.sleep(5)
+    page.iframe_order()

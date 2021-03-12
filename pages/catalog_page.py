@@ -2,7 +2,11 @@ from .locators import CatalogPageLocators
 from .locators import BasePageLocators
 from .locators import CartPageLocators
 from .locators import OrderPageLocators
+from selenium.common.exceptions import StaleElementReferenceException
 from .base_page import BasePage
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 
@@ -66,3 +70,13 @@ class CatalogPage(BasePage):
         news_checkbox.click()
         order_btn = self.browser.find_element(*OrderPageLocators.CREATE_ORDER_BTN)
         order_btn.click()
+
+    def iframe_order(self):
+        iframe = self.browser.find_element(*OrderPageLocators.IFRAME)
+        WebDriverWait(self.browser, 10).until(EC.frame_to_be_available_and_switch_to_it(iframe))
+        self.browser.switch_to.frame(iframe)
+        try:
+            self.browser.find_element(By.GOOGLE_BTN).click()
+        except StaleElementReferenceException:
+            self.browser.find_element(*OrderPageLocators.GOOGLE_BTN).click()
+
