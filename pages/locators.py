@@ -38,10 +38,10 @@ class OrderPageLocators:
     NEWS_CHECKBOX = (By.CSS_SELECTOR, '.co-input-information')
     CREATE_ORDER_BTN = (By.CSS_SELECTOR, '#create_order')
     DELIVERY_INFO = (By.CSS_SELECTOR, '.checkout-block__free-delivery')
-    IFRAME = (By.XPATH, '/html/body/iframe')
+    IFRAME = (By.CSS_SELECTOR, '.with-appled')
     ORDER_BTN_IFRAME = (By.XPATH, '//*[@id="paymentMethodsContainer"]/div[1]/button')
-    CLOSE_ICON = (By.XPATH, '//*[@id="wrapper"]/span')
-    GOOGLE_BTN = (By.CSS_SELECTOR, 'gpay-button')
+    CLOSE_ICON = (By.TAG_NAME, 'button')
+    GOOGLE_BTN = (By.XPATH, '//*[@id="paymentMethodsContainer"]/div[2]/button-button')
 
 
 class CatalogPageLocators:

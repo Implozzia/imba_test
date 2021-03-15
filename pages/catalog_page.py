@@ -73,10 +73,9 @@ class CatalogPage(BasePage):
 
     def iframe_order(self):
         iframe = self.browser.find_element(*OrderPageLocators.IFRAME)
-        WebDriverWait(self.browser, 10).until(EC.frame_to_be_available_and_switch_to_it(iframe))
+        # WebDriverWait(self.browser, 10).until(EC.frame_to_be_available_and_switch_to_it(iframe))
         self.browser.switch_to.frame(iframe)
-        try:
-            self.browser.find_element(By.GOOGLE_BTN).click()
-        except StaleElementReferenceException:
-            self.browser.find_element(*OrderPageLocators.GOOGLE_BTN).click()
+        time.sleep(3)
+        self.browser.find_element(*OrderPageLocators.CLOSE_ICON).click()
+        time.sleep(10)
 
