@@ -5,6 +5,10 @@ class BasePageLocators:
     ORDER_BTN = (By.CSS_SELECTOR, '.index-header__btn')
     CART_ICON = (By.CSS_SELECTOR, '.basket-link')
 
+class MainPageLocators:
+    MOSAIC_ADD_TO_BASKET_BTN = (By.CSS_SELECTOR, '.products-mosaic__item:nth-child(1) .indexproduct__buy-button')
+    POPUP_CONTINUE_SHOPPING = (By.CSS_SELECTOR, '.thankyou-popup__continue-link')
+
 
 class ConstructorPageLocators:
     FIRST_ZIP = (By.CSS_SELECTOR, '.constructor__flex-item:nth-child(1)')
